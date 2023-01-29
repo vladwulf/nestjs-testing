@@ -41,8 +41,8 @@ describe('TodoService Int', () => {
       expect(todo.status).toBe(TodoStatus.OPEN);
     });
 
-    it('should throw on duplicate title', async () => {
-      await todoService
+    it('should throw on duplicate title', () => {
+      todoService
         .createTodo(userId, dto)
         .then((todo) => expect(todo).toBeUndefined())
         .catch((error) => expect(error.status).toBe(403));
